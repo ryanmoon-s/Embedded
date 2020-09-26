@@ -1,0 +1,2 @@
+app:a.c add.c
+	gcc a.c add.c -o app

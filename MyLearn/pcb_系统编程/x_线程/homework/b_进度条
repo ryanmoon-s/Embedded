@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<string.h>
+int main(){
+	char proc[101];
+	char* ba = "|/-\\";  //   两个\转义\,两个%转义% ,
+	for(int i = 0; i <= 100;){//打印100次
+		printf("[%-100s][%d%%][%c]\r", proc, i, ba[i%4]); //\r是回车，回到本行开始，会覆盖   \n是换行，到下一行
+		fflush(stdout);  //不用\n 只能flush刷新输出缓冲区到屏幕
+		proc[i++] = '#';
+		proc[i] = '\0';
+		usleep(14000);
+	}
+	printf("\ncomplete!\n");
+}
+

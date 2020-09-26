@@ -1,0 +1,5 @@
+WIFEXITED()  真 (正常退出)
+	->  WEXITSTAUS()  获取子进程退出状态
+
+WIFSIGNALED()  真 (异常退出)
+	->  WTERMSIG()  获取导致子进程终止的信号的编号

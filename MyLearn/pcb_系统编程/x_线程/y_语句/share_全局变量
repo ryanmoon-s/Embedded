@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<string.h>
+#include<pthread.h>
+//共享全局变量
+long var = 100;
+void* pthre(void* arg){
+	long i = (long)arg;
+	sleep(i);
+	var = i;
+	printf("%ldth thread, thread num: %lu, var  = %ld\n", i, pthread_self(), var);
+	return NULL;
+}
+int main(){
+	pthread_t tid;
+	int ret;
+	long i;
+	for(i = 1; i <= 2; i++){
+		ret = pthread_create(&tid, NULL, pthre, (void*)i);//传地址要遭，i在变
+		if(ret != 0){
+			fprintf(stderr, "pthread_create err: %s\n", strerror(ret));
+		}
+	}
+	sleep(i);
+	printf("process: var = %ld\n", var);
+	return 0;
+}
