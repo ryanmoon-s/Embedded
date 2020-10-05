@@ -84,7 +84,7 @@
 #undef CONFIG_CMD_XIMG
 #define CONFIG_CMD_CACHE
 #define CONFIG_CMD_REGINFO
-#define CONFIG_CMD_ONENAND
+//#define CONFIG_CMD_ONENAND
 #define CONFIG_CMD_MTDPARTS
 #define CONFIG_CMD_MMC
 
@@ -175,7 +175,7 @@
 
 /* Miscellaneous configurable options */
 #define CONFIG_SYS_LONGHELP		/* undef to save memory */
-#define CONFIG_SYS_HUSH_PARSER		/* use "hush" command parser	*/
+//#define CONFIG_SYS_HUSH_PARSER		/* use "hush" command parser	*/
 #define CONFIG_SYS_PROMPT	"Goni # "
 #define CONFIG_SYS_CBSIZE	256	/* Console I/O Buffer Size */
 #define CONFIG_SYS_PBSIZE	384	/* Print Buffer Size */
@@ -190,7 +190,8 @@
 #define CONFIG_SYS_HZ			1000
 
 /* Goni has 3 banks of DRAM, but swap the bank */
-#define CONFIG_NR_DRAM_BANKS	3
+//#define CONFIG_NR_DRAM_BANKS	3
+#define CONFIG_NR_DRAM_BANKS	1
 #define PHYS_SDRAM_1		CONFIG_SYS_SDRAM_BASE	/* OneDRAM Bank #0 */
 #define PHYS_SDRAM_1_SIZE	(512 << 20)		/* 80 MB in Bank #0 */
 //#define PHYS_SDRAM_2		0x40000000		/* mDDR DMC1 Bank #1 */
@@ -202,7 +203,8 @@
 #define CONFIG_SYS_MONITOR_LEN		(256 << 10)	/* 256 KiB */
 
 /* FLASH and environment organization */
-#define CONFIG_ENV_IS_IN_ONENAND	1
+//#define CONFIG_ENV_IS_IN_ONENAND	1
+#define CONFIG_ENV_IS_NOWHERE	1
 #define CONFIG_ENV_SIZE			(256 << 10)	/* 256 KiB, 0x40000 */
 #define CONFIG_ENV_ADDR			(1 << 20)	/* 1 MB, 0x100000 */
 
